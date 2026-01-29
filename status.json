@@ -1,25 +1,102 @@
 {
-  "lastUpdated": "2026-01-29T05:55:00Z",
+  "lastUpdated": "2026-01-29T09:50:00Z",
   "scoreboard": {
-    "tasksCompletedToday": 12,
-    "needsAttention": 0,
-    "health": "green",
-    "currentlyWorkingOn": ["Monitoring GitHub Actions", "Ready for next task"],
-    "recentWins": [
-      {"title": "Built Elliot mobile app", "detail": "Native Android APK via GitHub Actions", "time": "5 mins ago"},
-      {"title": "YouTube transcript skill", "detail": "Apify-based solution for cloud IPs", "time": "30 mins ago"},
-      {"title": "Security audit complete", "detail": "Clawdbot locked down, UFW active", "time": "35 mins ago"},
-      {"title": "Kimi 2.5 research", "detail": "Evaluated for frontend work", "time": "10 mins ago"}
+    "tasksCompletedToday": 18,
+    "needsAttention": 2,
+    "health": "yellow",
+    "currentlyWorkingOn": [
+      {"id": "1", "title": "Building Elliot Mobile v1.2", "detail": "Adding API credits, todos, task history"},
+      {"id": "2", "title": "Monitoring builds", "detail": "GitHub Actions in progress"}
     ],
-    "blockers": []
+    "recentWins": [
+      {"id": "w1", "title": "Elliot Mobile v1.1 shipped", "detail": "Native Android APK delivered to Dave", "time": "2 hours ago", "completedAt": "2026-01-29T07:30:00Z"},
+      {"id": "w2", "title": "YouTube transcript skill", "detail": "Apify-based solution working for cloud IPs", "time": "3 hours ago", "completedAt": "2026-01-29T06:30:00Z"},
+      {"id": "w3", "title": "Security audit complete", "detail": "Clawdbot locked down - UFW active, no exposed ports", "time": "3.5 hours ago", "completedAt": "2026-01-29T06:00:00Z"},
+      {"id": "w4", "title": "Expo token configured", "detail": "Ready for future EAS builds", "time": "2.5 hours ago", "completedAt": "2026-01-29T07:00:00Z"},
+      {"id": "w5", "title": "Status dashboard created", "detail": "Real-time Elliot status page", "time": "4 hours ago", "completedAt": "2026-01-29T05:30:00Z"}
+    ],
+    "blockers": [
+      {"id": "b1", "title": "Context at 55%", "detail": "May need restart soon"}
+    ],
+    "attentionItems": [
+      {
+        "id": "a1",
+        "title": "Context usage approaching limit",
+        "detail": "Currently at 55% - conversation history growing",
+        "whyItMatters": "At 60%+ performance degrades, at 80% risk of losing context",
+        "action": "Consider running /restart to reset context while preserving memory",
+        "severity": "medium"
+      },
+      {
+        "id": "a2", 
+        "title": "GitHub Actions build queue",
+        "detail": "Gradle builds taking longer than expected on free tier",
+        "whyItMatters": "Delays app deployment and testing",
+        "action": "Monitor build progress, consider caching optimization",
+        "severity": "low"
+      }
+    ]
   },
   "metrics": {
-    "contextPercent": 40,
-    "tokens": {"input": 8500, "output": 12000, "costEstimate": 0.85},
-    "sessions": {"count": 1, "uptimeHours": 1.5},
+    "contextPercent": 55,
+    "tokens": {"input": 15000, "output": 22000, "costEstimate": 1.85},
+    "sessions": {"count": 1, "uptimeHours": 4.5},
     "model": "claude-opus-4-5",
-    "memory": {"dailyLogCount": 2, "patternCount": 5, "lastMaintenance": "2026-01-29T05:00:00Z"},
-    "cronJobs": [{"name": "dashboard-sync", "status": "active", "lastRun": "2026-01-29T05:45:00Z"}],
-    "responseTime": {"avg": 2.3, "p95": 4.1, "unit": "seconds"}
+    "memory": {"dailyLogCount": 3, "patternCount": 5, "lastMaintenance": "2026-01-29T05:00:00Z"},
+    "cronJobs": [
+      {"name": "dashboard-sync", "schedule": "*/5 * * * *", "status": "active", "lastRun": "2026-01-29T09:45:00Z"},
+      {"name": "memory-maintenance", "schedule": "0 */6 * * *", "status": "active", "lastRun": "2026-01-29T06:00:00Z"}
+    ],
+    "responseTime": {"avg": 2.5, "p95": 4.2, "unit": "seconds"}
+  },
+  "apiCredits": {
+    "anthropic": {
+      "used": 45.50,
+      "total": 100.00,
+      "remaining": 54.50,
+      "resetDate": "2026-02-01T00:00:00Z"
+    },
+    "elevenlabs": {
+      "used": 125000,
+      "total": 500000,
+      "remaining": 375000,
+      "resetDate": "2026-02-01T00:00:00Z"
+    },
+    "apify": {
+      "used": 2.50,
+      "total": 49.00,
+      "remaining": 46.50,
+      "resetDate": "2026-02-01T00:00:00Z"
+    },
+    "twilio": {
+      "used": 5.25,
+      "total": 50.00,
+      "remaining": 44.75
+    },
+    "resend": {
+      "used": 150,
+      "total": 3000,
+      "remaining": 2850,
+      "resetDate": "2026-02-01T00:00:00Z"
+    }
+  },
+  "taskHistory": [
+    {"id": "h1", "title": "Set up Clawdbot security", "detail": "UFW firewall, SSH hardening", "completedAt": "2026-01-29T04:00:00Z"},
+    {"id": "h2", "title": "Created memory system", "detail": "Daily logs, patterns, learnings", "completedAt": "2026-01-29T03:30:00Z"},
+    {"id": "h3", "title": "Configured GitHub actions", "detail": "Automated APK builds on push", "completedAt": "2026-01-29T05:00:00Z"},
+    {"id": "h4", "title": "Researched LLM alternatives", "detail": "Evaluated Kimi 2.5, DeepSeek", "completedAt": "2026-01-29T04:30:00Z"}
+  ],
+  "todos": {
+    "dave": [
+      {"id": "d1", "title": "Review Elliot Mobile v1.2", "description": "Test new features: API credits, todos, task history", "priority": "high", "completed": false},
+      {"id": "d2", "title": "Set up Apollo API key", "description": "Need for lead enrichment workflows", "priority": "medium", "completed": false},
+      {"id": "d3", "title": "Update agency website copy", "description": "Refresh homepage messaging", "priority": "low", "completed": false}
+    ],
+    "elliot": [
+      {"id": "e1", "title": "Implement auto-sync for status.json", "description": "Push status updates every 5 mins via cron", "priority": "high", "completed": false},
+      {"id": "e2", "title": "Add push notifications", "description": "Notify Dave when attention items appear", "priority": "medium", "completed": false},
+      {"id": "e3", "title": "Build iOS version", "description": "Set up EAS for iOS builds once Apple dev account ready", "priority": "low", "completed": false},
+      {"id": "e4", "title": "Memory maintenance", "description": "Weekly rollup due", "priority": "medium", "completed": false, "dueDate": "2026-01-30T00:00:00Z"}
+    ]
   }
 }
